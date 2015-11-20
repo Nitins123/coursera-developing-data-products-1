@@ -8,6 +8,11 @@ shinyUI(pageWithSidebar(
 
   # Sidebar with a slider input for number of observations
   sidebarPanel(
+    p("Select your loan parameters (Loan Amount, Interest Rate, & Fixed Payment
+      Amount) and see the calculated Loan Term, Total Finance Charge, and Total
+      of all loan payments. 
+      Also see a plot of the remain loan balance as the loan is paid off.
+      Lastly, the full amortization table is available to inspect"),
     h2('Loan Settings'),
     sliderInput("loanAmount",
                 "Loan Amount",
@@ -60,9 +65,6 @@ shinyUI(pageWithSidebar(
           column(3,
             h5('Finance Change'),
             textOutput("financeCharge")),
-          column(3,
-            h5('Last Payment amount'),
-            textOutput("lastPayment")),
           column(3,
             h5('Total of Payments'),
             textOutput("totalOfPayments")))
